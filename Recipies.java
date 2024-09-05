@@ -23,6 +23,17 @@ public class Recipies {
     && userIngredients.get("Milk") && userIngredients.get("Butter") && userIngredients.get("Salt")) {
         recipes.add(new Recipe("Pancakes", "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/"));
       };
+    if (userIngredients.get("Flour") && userIngredients.get("Sugar") && userIngredients.get("Eggs")&& userIngredients.get("Baking Powder")
+    && userIngredients.get("Milk") && userIngredients.get("Butter") && userIngredients.get("Vanilla Extract") && userIngredients.get("Chocolate Chips")
+    && userIngredients.get("Brown Sugar") && userIngredients.get("Salt")) {
+        recipes.add(new Recipe("Chocolate Chip Cookies", "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/#wprm-recipe-container-8678"));
+      };
+    if (userIngredients.get("Flour") && userIngredients.get("Sugar") && userIngredients.get("Eggs")&& userIngredients.get("Baking Powder")
+    && userIngredients.get("Cocoa") && userIngredients.get("Butter") && userIngredients.get("Vanilla Extract") && userIngredients.get("Salt")
+    && userIngredients.get("Powdered Sugar")) {
+        recipes.add(new Recipe("Brownies", "https://tasty.co/recipe/swedish-sticky-chocolate-cake-kladdkaka"));
+      };
+
       return recipes;
   }
 }

@@ -9,8 +9,8 @@ public class IngredientsMenu {
         Scanner scanner = new Scanner(System.in);
 
         // List of ingredients
-        String[] ingredients = {"Flour", "Sugar", "Eggs", "Butter", "Milk", "Baking Powder", "Vanilla Extract"
-        , "Cocoa", "Chocolate Chips", "Salt", "Brown Sugar", "Honey", "Yogurt", "Cream Cheese", "Lemon Juice"};
+        String[] ingredients = {"Flour", "Sugar", "Eggs", "Butter", "Baking Soda", "Milk", "Baking Powder", "Vanilla Extract"
+        , "Cocoa", "Chocolate Chips", "Salt", "Brown Sugar", "Powdered Sugar", "Honey", "Yogurt", "Cream Cheese", "Lemon Juice"};
         HashMap<String, Boolean> userIngredients = new HashMap<>();
 
         // Ask user if they have each ingredient and store the answers
