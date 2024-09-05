@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class IngredientsMenu {
 
@@ -10,27 +11,24 @@ public class IngredientsMenu {
         // List of ingredients
         String[] ingredients = {"Flour", "Sugar", "Eggs", "Butter", "Milk", "Baking Powder", "Vanilla Extract"
         , "Cocoa", "Chocolate Chips", "Salt", "Brown Sugar", "Honey", "Yogurt", "Cream Cheese", "Lemon Juice"};
-        ArrayList<String> selectedIngredients = new ArrayList<>();
+        HashMap<String, Boolean> userIngredients = new HashMap<>();
 
-        // Loop through each ingredient and ask the user for yes/no input
+        // Ask user if they have each ingredient and store the answers
         System.out.println("Please answer 'yes' or 'no' if you have the following ingredients:");
-
         for (String ingredient : ingredients) {
             System.out.println("Do you have " + ingredient + "? (yes/no): ");
             String answer = scanner.nextLine().trim().toLowerCase();
 
-            // If the answer is "yes", add the ingredient to the selected list
-            if (answer.equals("yes")) {
-                selectedIngredients.add(ingredient);
-            }
+            // Store the answer in a HashMap (yes = true, no = false)
+            userIngredients.put(ingredient, answer.equals("yes"));
         }
 
         // Display the selected ingredients
         System.out.println("\nYou have selected the following ingredients:");
-        if (selectedIngredients.isEmpty()) {
+        if (userIngredients.isEmpty()) {
             System.out.println("No ingredients selected.");
         } else {
-            for (String selected : selectedIngredients) {
+            for (String selected : userIngredients) {
                 System.out.println("- " + selected);
             }
         }
