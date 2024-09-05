@@ -28,8 +28,23 @@ public class IngredientsMenu {
         if (userIngredients.isEmpty()) {
             System.out.println("No ingredients selected.");
         } else {
-            for (String selected : userIngredients) {
-                System.out.println("- " + selected);
+            for (String ingredient : userIngredients.keySet()) {
+                if (userIngredients.get(ingredient)) {
+                    System.out.println("- " + ingredient);
+                }
+            }
+        }
+        
+        // Suggest recipes based on the ingredients the user has
+        System.out.println("\nBased on the ingredients you have, here are some recipes you can make:");
+
+        ArrayList<Recipies.Recipe> availableRecipes = Recipies.suggestRecipes(userIngredients);
+
+        if (availableRecipes.isEmpty()) {
+            System.out.println("Sorry, I couldn't find any recipes with the ingredients you have.");
+        } else {
+            for (Recipies.Recipe recipe : availableRecipes) {
+                System.out.println("- " + recipe.name + ": " + recipe.url);
             }
         }
 
