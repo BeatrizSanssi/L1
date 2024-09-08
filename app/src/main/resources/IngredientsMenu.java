@@ -1,20 +1,28 @@
-package app.src.main;
-import java.util.Scanner;
+package app.src.main.resources;
 
-import app.src.main.Recipies;
-
+import app.src.main.resources.Recipies.Recipe;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
+/**
+ * This class displays the ingredients menu and processes user input.
+ */
 public class IngredientsMenu {
 
-    public static void main(String[] args) {
-        // Create a scanner to read user input
-        Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner;
+    private final Recipies recipies;
 
+    public IngredientsMenu(Scanner scanner, Recipies recipies) {
+        this.scanner = scanner;
+        this.recipies = recipies;
+    }
+
+    public void displayIngredientsMenu() {
         // List of ingredients
-        String[] ingredients = {"Flour", "Sugar", "Eggs", "Butter", "Baking Soda", "Milk", "Baking Powder", "Vanilla Extract"
-        , "Cocoa", "Chocolate Chips", "Salt", "Brown Sugar", "Powdered Sugar", "Honey", "Yogurt", "Cream Cheese", "Lemon Juice"};
+        String[] ingredients = {"Flour", "Sugar", "Eggs", "Butter", "Baking Soda", "Milk", "Baking Powder", 
+                                "Vanilla Extract", "Cocoa", "Chocolate Chips", "Salt", "Brown Sugar", 
+                                "Powdered Sugar", "Honey", "Yogurt", "Cream Cheese", "Lemon Juice"};
         HashMap<String, Boolean> userIngredients = new HashMap<>();
 
         // Ask user if they have each ingredient and store the answers
@@ -38,11 +46,10 @@ public class IngredientsMenu {
                 }
             }
         }
-        
+
         // Suggest recipes based on the ingredients the user has
         System.out.println("\nBased on the ingredients you have, here are some recipes you can make:");
-
-        ArrayList<Recipies.Recipe> availableRecipes = Recipies.suggestRecipes(userIngredients);
+        ArrayList<Recipies.Recipe> availableRecipes = recipies.suggestRecipes(userIngredients);
 
         if (availableRecipes.isEmpty()) {
             System.out.println("Sorry, I couldn't find any recipes with the ingredients you have.");
@@ -51,8 +58,5 @@ public class IngredientsMenu {
                 System.out.println("- " + recipe.name + ": " + recipe.url);
             }
         }
-
-        // Close the scanner
-        scanner.close();
     }
 }
