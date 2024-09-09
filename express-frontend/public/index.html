@@ -4,32 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Suggestion App</title>
-    <script src="scripts.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="./scripts.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <h1>Recipe Suggestion App</h1>
 
     <!-- Greeting section -->
-    <div>
+    <div id="name">
         <label for="name">Enter your name:</label>
         <input type="text" id="name" name="name">
-        <button onclick="getGreeting()">Get Greeting</button>
+        <button onclick="getGreeting()">Submit</button>
         <p id="greeting"></p>
     </div>
 
     <!-- Ingredients section -->
-    <div>
+    <div id="ingredients">
         <h3>Select Ingredients</h3>
         <div id="ingredients-list"></div>
         <button onclick="getRecipes()">Get Recipes</button>
     </div>
 
     <!-- Recipe suggestions -->
-    <div>
+    <div id="recipes">
         <h3>Recipes</h3>
         <ul id="recipes-list"></ul>
     </div>
-
 </body>
 </html>

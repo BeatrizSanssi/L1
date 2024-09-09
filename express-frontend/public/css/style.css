@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+html {
+    font-size: 20px;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: rgb(76, 99, 76);
+    margin: 20px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    color: rgb(16, 14, 14);
+    font-family: 'NT Adventure';
+    display: grid;
+    gap: 1rem;
+    padding: 0px;
+    justify-content: space-evenly;
+    grid-template-columns: auto;
+    grid-template-rows: 200px auto auto;
+    grid-template-areas:
+        "name"
+        "ingredients"
+        "recipes";
+}
+
+img {
+    max-width: 100%;
+}
+
+.container > div {
+    background-color: rgb(76, 99, 76);
+    justify-content: space-between;
+    align-items: center;
+    max-width: fit-content;
+    position: relative;
+}
+
+#greeting {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+#ingredients {
+    align-self: center;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}

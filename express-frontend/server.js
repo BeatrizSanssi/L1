@@ -6,14 +6,14 @@ const app = express();
 const port = 3000;
 
 // Middleware to serve static files (e.g., HTML, CSS, JS)
-app.use(express.static('src/static'));
+app.use(express.static(path.join(__dirname, './public')));
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
 // Route to serve the main page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src', 'static', 'index.html'));
+    res.sendFile(path.join(__dirname, './public', 'index.html'));
 });
 
 // Route to fetch greeting from the Java backend
