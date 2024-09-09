@@ -61,12 +61,12 @@ sourceSets {
         java {
             srcDirs("src/test/java")
         }
-        resources {
-            srcDirs("src/test/resources")
-        }
+        // resources {
+        //     srcDirs("src/test/resources")
+        // }
     }
 }
 
 application {
-    mainClass.set("app.main.App")
+    mainClass.set("app.App")
 }

@@ -13,19 +13,19 @@ import java.util.List;
 @RequestMapping("/api")
 public class IngredientsController {
 
-    // Endpoint to get the list of ingredients
-    @GetMapping("/ingredients")
+    @GetMapping("/ingredient-list")
     public List<String> getIngredients() {
         IngredientsMenu ingredientsMenu = new IngredientsMenu();
         return ingredientsMenu.getIngredients();
     }
 
+
     // Endpoint to suggest recipes based on selected ingredients
-    @PostMapping("/recipes")
+    @PostMapping("/recipe-suggestions")
     public List<Recipe> suggestRecipes(@RequestBody List<String> ingredients) {
         HashMap<String, Boolean> userIngredients = new HashMap<>();
         for (String ingredient : ingredients) {
-            userIngredients.put(ingredient, true);  // Mark each selected ingredient as true
+            userIngredients.put(ingredient, true);
         }
 
         Recipies recipies = new Recipies();

@@ -37,6 +37,6 @@ function getRecipes() {
     });
 }
 // Serve static files from the 'public' directory
-app.use(express.static('public'));
+app.use(express.static('src/static'));
 
 document.querySelector('#get-recipes-btn').addEventListener('click', getRecipes);

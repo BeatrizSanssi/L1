@@ -6,6 +6,8 @@ package app.main;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import app.App;
+
 public class AppTest {
 
     @Test
