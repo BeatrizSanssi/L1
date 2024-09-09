@@ -1,28 +1,28 @@
 const express = require('express');
 const axios = require('axios'); // To make requests to your Java backend
 const path = require('path');
-const cors = require('cors'); 
+const cors = require('cors');
+const dotenv = require('dotenv'); 
 
 const app = express();
 const port = 3000;
 
 // Middleware to enable CORS
-app.use(cors({ origin: 'http://localhost:8080/' })); 
-// app.use(cors()); 
+app.use(cors()); 
 
 // Middleware to serve static files (e.g., HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, '..','/public')));
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
 // Route to serve the main page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public', 'index.html'));
+    res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 
 // Route to fetch greeting from the Java backend
-app.get('/greet', async (req, res) => {
+app.get('greet', async (req, res) => {
     const name = req.query.name;
     try {
         const response = await axios.get(`http://localhost:8080/api/greet?name=${name}`);
@@ -33,7 +33,7 @@ app.get('/greet', async (req, res) => {
 });
 
 // Route to fetch ingredients from the Java backend
-app.get('/ingredients', async (req, res) => {
+app.get('ingredients', async (req, res) => {
     try {
         const response = await axios.get('http://localhost:8080/api/ingredients');
         res.json(response.data);
