@@ -27,22 +27,31 @@ function getRecipes() {
         selectedIngredients.push(checkbox.value);
     });
 
-    fetch('http://localhost:8080/api/recipes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(selectedIngredients)
-    })
-    .then(response => response.json())
-    .then(recipes => {
-        const recipesList = document.getElementById('recipes-list');
-        recipesList.innerHTML = '';
-        recipes.forEach(recipe => {
-            recipesList.innerHTML += `<li><a href="${recipe.url}">${recipe.name}</a></li>`;
+    if (selectedIngredients.length > 0) {
+        // Visa receptsektionen genom att ta bort 'hidden'-klassen
+        document.getElementById('recipes').classList.remove('hidden');
+
+        fetch('http://localhost:8080/api/recipes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(selectedIngredients)
+        })
+        .then(response => response.json())
+        .then(recipes => {
+            const recipesList = document.getElementById('recipes-list');
+            recipesList.innerHTML = '';
+            recipes.forEach(recipe => {
+                recipesList.innerHTML += `<li><a href="${recipe.url}">${recipe.name}</a></li>`;
+            });
         });
-    });
+    } else {
+        // Om inga ingredienser är valda, visa ett meddelande eller håll receptsektionen dold
+        alert('Please select at least one ingredient.');
+    }
 }
+
 
 // Fetch ingredients from the Java backend
 fetch('http://localhost:8080/api/ingredients')

@@ -2,18 +2,18 @@
 
 html {
     font-size: 20px;
+    height: auto;
+
 }
 
-html,
 body {
-    height: 100%;
-    background-color: rgb(76, 99, 76);
+  
     margin: 20px;
     padding: 20px;
     background-size: cover;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: center;
-    opacity: 1.0;
+    background-color: white;
     color: rgb(16, 14, 14);
     font-family: 'NT Adventure';
     background-image: url(../images/cupcakes.jpg);
@@ -117,13 +117,15 @@ h3 {
     font-size: 1.5em;
     color: white;
     text-align: center;
+    padding: 10px;
 }
 
-#ingredients-list {
+#ingredients-list, #recipes-list {
     font-size: 25px;
     padding: 10px;
     color: black;
     text-align: left;
+    margin: 20px;
 }
 
 #recipes {

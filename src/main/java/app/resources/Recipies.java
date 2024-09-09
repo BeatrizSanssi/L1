@@ -32,7 +32,55 @@ public class Recipies {
             userIngredients.getOrDefault("Chocolate Chips", false)) {
             recipes.add(new Recipe("Chocolate Chip Cookies", "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/#wprm-recipe-container-8678"));
         }
-        // Add more recipe suggestions here...
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Cocoa", false)) {
+            recipes.add(new Recipe("Chocolate Cake", "https://www.allrecipes.com/recipe/17528/extreme-chocolate-cake/"));
+        }
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Lemon Juice", false)) {
+            recipes.add(new Recipe("Lemon Cake", "https://www.allrecipes.com/recipe/7399/lemon-pound-cake-i/"));
+        }
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Yogurt", false)) {
+            recipes.add(new Recipe("Yogurt Cake", "https://www.allrecipes.com/recipe/17678/yogurt-cake-i/"));
+        }
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Honey", false)) {
+            recipes.add(new Recipe("Honey Cake", "https://www.allrecipes.com/recipe/7399/lemon-pound-cake-i/"));
+        }
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Cocoa", false) &&
+            userIngredients.getOrDefault("Butter", false)) {
+            recipes.add(new Recipe("Brownies", "https://www.allrecipes.com/recipe/10549/best-brownies/"));
+        }
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Vanilla Extract", false)) {
+            recipes.add(new Recipe("Vanilla Cake", "https://www.allrecipes.com/recipe/7475/simple-white-cake/"));
+        }
+        if (userIngredients.getOrDefault("Flour", false) && 
+            userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Baking Powder", false)) {
+            recipes.add(new Recipe("Pound Cake", "https://www.allrecipes.com/recipe/7399/lemon-pound-cake-i/"));
+        }
+        if (userIngredients.getOrDefault("Sugar", false) && 
+            userIngredients.getOrDefault("Eggs", false) &&
+            userIngredients.getOrDefault("Vanilla Extract", false) &&
+            userIngredients.getOrDefault("Salt", false)) {
+            recipes.add(new Recipe("Meringues", "https://www.taste.com.au/recipes/basic-meringues-2/631f6019-107c-428b-b2c9-772a2b498ace"));
+        }  
 
         return recipes;
     }
