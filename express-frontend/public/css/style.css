@@ -10,42 +10,127 @@ body {
     background-color: rgb(76, 99, 76);
     margin: 20px;
     padding: 20px;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 1.0;
     color: rgb(16, 14, 14);
     font-family: 'NT Adventure';
+    background-image: url(../images/cupcakes.jpg);
     display: grid;
     gap: 1rem;
     padding: 0px;
     justify-content: space-evenly;
-    grid-template-columns: auto;
-    grid-template-rows: 200px auto auto;
+    grid-template-columns: 600px;
+    grid-template-rows: 250px auto auto auto;
     grid-template-areas:
+        "header"
         "nameForm"
         "ingredients"
         "recipes";
+}
+
+#header{
+    grid-area: header;
+    background-image: url(../images/cupcake2.webp);
+    background-repeat: no-repeat;
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 1.0;
+}
+
+#header img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0px;
+    padding: 0px;
+    opacity: 1.0;
+}
+
+#headerText{
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-top: 155px;
+    color: rgb(96, 55, 55);
+    text-align: center;
+    border-color: black;
 }
 
 img {
     max-width: 100%;
 }
 
-.container > div {
-    background-color: rgb(76, 99, 76);
+.containerElement > div {
     justify-content: space-between;
+    background-color: seashell;
     align-items: center;
     max-width: fit-content;
     position: relative;
 }
 
 #greeting {
+    grid-area: greeting;
+    background-color: seashell;
     font-size: 2em;
-    color: white;
+    color: black;
+    text-align: center;
+    max-width: fit-content;
+}
+
+#nameLabel {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: seashell;
+    display: block;
+    text-align: center;
+}
+
+#name {
+    font-size: 20px;
+    border-color: seashell;
+    max-width: fit-content;
+    background-color: seashell;
+    height: 30px;
+}
+
+#submit-name-btn, #get-recipes-btn {
+    font-size: 20px;
+    background-color: seashell;
+    color: black;
+    border-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 0px 1px 2px rgb(91, 64, 64);;
+}
+h3 {
+    font-size: 1.5em;
+    color: black;
     text-align: center;
 }
 
 #ingredients {
+    grid-area: ingredients;
+    background-color: seashell;
     align-self: center;
     font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+#ingredients-list {
+    font-size: 25px;
+    padding: 10px;
+    color: black;
+    text-align: left;
+}
+
+#recipes {
+    grid-area: recipes;
+    background-color: seashell;
+    align-self: center;
+    font-size: 1em;
     color: white;
     text-align: center;
 }
