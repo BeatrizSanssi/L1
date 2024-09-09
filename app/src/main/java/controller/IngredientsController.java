@@ -1,9 +1,10 @@
-package app.src.main.controller;
+package app.src.main.java.controller;
 
-import app.src.main.resources.IngredientsMenu;
-import app.src.main.resources.Recipies;
-import app.src.main.resources.Recipies.Recipe;
 import org.springframework.web.bind.annotation.*;
+
+import app.src.main.java.resources.IngredientsMenu;
+import app.src.main.java.resources.Recipies;
+import app.src.main.java.resources.Recipies.Recipe;
 
 import java.util.HashMap;
 import java.util.List;

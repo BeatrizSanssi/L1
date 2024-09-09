@@ -1,8 +1,8 @@
-package app.src.main.resources;
+package app.src.main.java.resources;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Recipies {
 
@@ -18,7 +18,7 @@ public class Recipies {
     }
 
     // Function to suggest recipes based on the ingredients the user has
-    public List<Recipe> suggestRecipes(HashMap<String, Boolean> userIngredients) {
+    public List<Recipe> suggestRecipes(Map<String, Boolean> userIngredients) {
         List<Recipe> recipes = new ArrayList<>();
 
         if (userIngredients.getOrDefault("Flour", false) && 

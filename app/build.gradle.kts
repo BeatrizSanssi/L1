@@ -7,37 +7,38 @@
  */
 
 plugins {
-    id 'org.springframework.boot' version '3.1.0'
-    id 'io.spring.dependency-management' version '1.1.0'
-    id 'java'
-    // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    id("org.springframework.boot") version "3.3.3"
+    id("io.spring.dependency-management") version "1.1.0"
+    id("java")
+    id("application") 
+    id("com.github.ben-manes.versions") version "0.47.0"
 }
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '21'
+
+group = "com.example"
+version = "0.0.1-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web' 
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  
-    developmentOnly 'org.springframework.boot:spring-boot-devtools' 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'  // For testing
-    // This dependency is used by the application.
-    implementation(libs.guava)
-}
+    // Spring Boot web dependency for REST APIs
+    implementation("org.springframework.boot:spring-boot-starter-web")
 
-testing {
-    suites {
-        // Configure the built-in test suite
-        val test by getting(JvmTestSuite::class) {
-            // Use JUnit4 test framework
-            useJUnit("4.13.2")
-        }
+    // Optional: Spring Boot Thymeleaf dependency for templating
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+    // Spring Boot development tools for live reload
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+    // JUnit 5 for testing
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+
+    // Spring Boot testing support
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude(module = "junit")
     }
 }
 
@@ -45,14 +46,6 @@ tasks.test {
     useJUnitPlatform()
 }
 
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-}
-
 application {
-    // Define the main class for the application.
-    mainClass = "app.src.main.App"
+    mainClass.set("app.src.main.java.App")
 }
