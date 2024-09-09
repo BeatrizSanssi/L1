@@ -1,4 +1,4 @@
-package app.src.main.java.app.main;
+package app.resources;
 /**
  * This represents the class for the HelloThere task.
  */

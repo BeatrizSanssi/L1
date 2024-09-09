@@ -1,26 +1,26 @@
-package app.src.main.java;
+package app.main;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import app.src.main.java.app.main.GoodDay;
-import app.src.main.java.resources.IngredientsMenu;
-import app.src.main.java.resources.Recipies;
-import app.src.main.java.resources.Recipies.Recipe;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import app.resources.GoodDay;
+import app.resources.IngredientsMenu;
+import app.resources.Recipies;
+import app.resources.Recipies.Recipe;
 
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
+@SpringBootApplication
 @RestController
 @RequestMapping("/api")
 public class App {
+
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
+    }
 
     // API to return a greeting message
     @GetMapping("/greet")

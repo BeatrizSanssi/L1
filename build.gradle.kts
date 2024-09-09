@@ -8,10 +8,10 @@
 
 plugins {
     id("org.springframework.boot") version "3.3.3"
-    id("io.spring.dependency-management") version "1.1.0"
+    id("io.spring.dependency-management") version "1.1.6"
     id("java")
     id("application") 
-    id("com.github.ben-manes.versions") version "0.47.0"
+    id("com.github.ben-manes.versions") version "0.51.0"
 }
 
 group = "com.example"
@@ -32,9 +32,11 @@ dependencies {
     // Spring Boot development tools for live reload
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
-    // JUnit 5 for testing
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+     // JUnit 5 for testing - ensure same version across all JUnit dependencies
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.0")
+    testImplementation("org.junit.platform:junit-platform-commons:1.11.0")
+    testImplementation("org.junit.platform:junit-platform-engine:1.11.0")
 
     // Spring Boot testing support
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
@@ -46,6 +48,25 @@ tasks.test {
     useJUnitPlatform()
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs("src/main/java")
+        }
+        resources {
+            srcDirs("src/main/resources")
+        }
+    }
+    test {
+        java {
+            srcDirs("src/test/java")
+        }
+        resources {
+            srcDirs("src/test/resources")
+        }
+    }
+}
+
 application {
-    mainClass.set("app.src.main.java.App")
+    mainClass.set("app.main.App")
 }

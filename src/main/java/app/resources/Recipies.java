@@ -1,4 +1,4 @@
-package app.src.main.java.resources;
+package app.resources;
 
 import java.util.ArrayList;
 import java.util.List;
