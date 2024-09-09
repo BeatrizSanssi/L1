@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+html {
+    font-size: 20px;
+}
+
+html,
+body,
+nav,
+header,
+footer,
+div {
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: rgb(76, 99, 76);
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    background-color: rgb(76, 99, 76);
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
