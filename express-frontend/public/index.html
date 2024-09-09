@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Suggestion App</title>
-    <script src="./scripts.js"></script>
+    <script src="./script.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <h1>Recipe Suggestion App</h1>
 
     <!-- Greeting section -->
-    <div id="name">
+    <div id="nameForm">
         <label for="name">Enter your name:</label>
         <input type="text" id="name" name="name">
-        <button onclick="getGreeting()">Submit</button>
+        <button id="submit-name-btn">Submit</button>
         <p id="greeting"></p>
     </div>
 
@@ -22,7 +22,7 @@
     <div id="ingredients">
         <h3>Select Ingredients</h3>
         <div id="ingredients-list"></div>
-        <button onclick="getRecipes()">Get Recipes</button>
+        <button id="get-recipes-btn">Get Recipes</button>
     </div>
 
     <!-- Recipe suggestions -->

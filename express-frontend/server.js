@@ -1,9 +1,14 @@
 const express = require('express');
 const axios = require('axios'); // To make requests to your Java backend
 const path = require('path');
+const cors = require('cors'); 
 
 const app = express();
 const port = 3000;
+
+// Middleware to enable CORS
+app.use(cors({ origin: 'http://localhost:8080/' })); 
+// app.use(cors()); 
 
 // Middleware to serve static files (e.g., HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, './public')));

@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
-import app.resources.GoodDay;
 import app.resources.IngredientsMenu;
 import app.resources.Recipies;
 import app.resources.Recipies.Recipe;
@@ -24,9 +23,10 @@ public class App {
 
     // API to return a greeting message
     @GetMapping("/greet")
-    public String greetUser(@RequestParam String name) {
-        GoodDay goodDay = new GoodDay();
-        return goodDay.goodDay(name);
+    public Map<String, String> greetUser(@RequestParam String name) {
+        Map<String, String> response = new HashMap<>();
+        response.put("greeting", "Hello, " + name + "!");  // Adjust message to your desired format
+        return response;
     }
 
     // API to return the list of ingredients
