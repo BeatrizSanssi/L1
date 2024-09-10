@@ -18,6 +18,7 @@ services:
       - "3000:3000"
     volumes:
       - ./express-frontend:/app
-
     environment:
       - BACKEND_URL=http://backend:8080
+    depends_on:
+      - backend
