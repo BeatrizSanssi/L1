@@ -11,18 +11,19 @@ const port = 3000;
 app.use(cors()); 
 
 // Middleware to serve static files (e.g., HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, '..','/public')));
+app.use(express.static(path.join(__dirname, 'public')));
+console.log('Serving static files from:', path.join(__dirname, 'public'));
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
 // Route to serve the main page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public', 'index.html'));
+    res.sendFile(path.join(__dirname,'public', 'index.html'));
 });
 
 // Route to fetch greeting from the Java backend
-app.get('greet', async (req, res) => {
+app.get('/greet', async (req, res) => {
     const name = req.query.name;
     try {
         const response = await axios.get(`http://localhost:8080/api/greet?name=${name}`);
@@ -33,7 +34,7 @@ app.get('greet', async (req, res) => {
 });
 
 // Route to fetch ingredients from the Java backend
-app.get('ingredients', async (req, res) => {
+app.get('/ingredients', async (req, res) => {
     try {
         const response = await axios.get('http://localhost:8080/api/ingredients');
         res.json(response.data);

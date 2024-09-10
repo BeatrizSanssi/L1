@@ -1,3 +1,6 @@
+// Define the backend URL before any function uses it
+// const backendUrl = 'http://localhost:8080';
+
 // Attach event listeners after DOM has fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     // Attach event listeners for buttons
@@ -8,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Fetch greeting from the Java backend
 function getGreeting() {
     const name = document.getElementById('name').value;
-    fetch(`http://localhost:8080/api/greet?name=${name}`)
+    fetch('http://localhost:8080/api/greet?name=${name}')  // Corrected this part
         .then(response => response.json())
         .then(data => {
             const greetingElement = document.getElementById('greeting');
@@ -28,10 +31,10 @@ function getRecipes() {
     });
 
     if (selectedIngredients.length > 0) {
-        // Visa receptsektionen genom att ta bort 'hidden'-klassen
+        // Show the recipes section by removing the 'hidden' class
         document.getElementById('recipes').classList.remove('hidden');
 
-        fetch('http://localhost:8080/api/recipes', {
+        fetch(`http://localhost:8080/api/recipes`, {  // Corrected this part
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,14 +50,13 @@ function getRecipes() {
             });
         });
     } else {
-        // Om inga ingredienser är valda, visa ett meddelande eller håll receptsektionen dold
+        // If no ingredients are selected, show a message or keep the recipe section hidden
         alert('Please select at least one ingredient.');
     }
 }
 
-
 // Fetch ingredients from the Java backend
-fetch('http://localhost:8080/api/ingredients')
+fetch(`http://localhost:8080/api/ingredients`)  // Corrected this part
     .then(response => response.json())
     .then(data => {
         const ingredientsList = document.getElementById('ingredients-list');

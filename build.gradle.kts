@@ -7,11 +7,11 @@
  */
 
 plugins {
-    id("org.springframework.boot") version "3.3.3"
+    id("org.springframework.boot") version "3.3.2"
     id("io.spring.dependency-management") version "1.1.6"
+    kotlin("jvm") version "1.8.20"
     id("java")
-    id("application") 
-    id("com.github.ben-manes.versions") version "0.51.0"
+    id("application")
 }
 
 group = "com.example"
@@ -21,6 +21,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 repositories {
     mavenCentral()
 }
+
 
 dependencies {
     // Spring Boot web dependency for REST APIs
@@ -44,28 +45,39 @@ dependencies {
     }
 }
 
+// tasks.withType<Jar> {
+//     manifest {
+//         attributes["Main-Class"] = "org.springframework.boot.loader.JarLauncher"
+//     }
+// }
+
+// // Configure the bootJar task for Spring Boot
+// tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+//     mainClass.set("app.App")                                            
+// }
+
 tasks.test {
     useJUnitPlatform()
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs("src/main/java")
-        }
-        resources {
-            srcDirs("src/main/resources")
-        }
-    }
-    test {
-        java {
-            srcDirs("src/test/java")
-        }
-        // resources {
-        //     srcDirs("src/test/resources")
-        // }
-    }
-}
+// sourceSets {
+//     main {
+//         java {
+//             srcDirs("./src/main/java")
+//         }
+//         resources {
+//             srcDirs("./src/main/resources")
+//         }
+//     }
+//     test {
+//         java {
+//             srcDirs("./src/test/java")
+//         }
+//         // resources {
+//         //     srcDirs("src/test/resources")
+//         // }
+//     }
+// }
 
 application {
     mainClass.set("app.App")
