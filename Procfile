@@ -1,1 +1,0 @@
-web: java -jar target/L1.jar

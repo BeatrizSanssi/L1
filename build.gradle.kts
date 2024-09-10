@@ -45,39 +45,10 @@ dependencies {
     }
 }
 
-// tasks.withType<Jar> {
-//     manifest {
-//         attributes["Main-Class"] = "org.springframework.boot.loader.JarLauncher"
-//     }
-// }
-
-// // Configure the bootJar task for Spring Boot
-// tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
-//     mainClass.set("app.App")                                            
-// }
 
 tasks.test {
     useJUnitPlatform()
 }
-
-// sourceSets {
-//     main {
-//         java {
-//             srcDirs("./src/main/java")
-//         }
-//         resources {
-//             srcDirs("./src/main/resources")
-//         }
-//     }
-//     test {
-//         java {
-//             srcDirs("./src/test/java")
-//         }
-//         // resources {
-//         //     srcDirs("src/test/resources")
-//         // }
-//     }
-// }
 
 application {
     mainClass.set("app.App")

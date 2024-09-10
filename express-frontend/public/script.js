@@ -1,6 +1,3 @@
-// Define the backend URL before any function uses it
-// const backendUrl = 'http://localhost:8080';
-
 // Attach event listeners after DOM has fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     // Attach event listeners for buttons
@@ -11,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Fetch greeting from the Java backend
 function getGreeting() {
     const name = document.getElementById('name').value;
-    fetch('http://localhost:8080/api/greet?name=${name}')  // Corrected this part
+    fetch(`http://localhost:8080/api/greet?name=${name}`)  // Corrected this part
         .then(response => response.json())
         .then(data => {
             const greetingElement = document.getElementById('greeting');
